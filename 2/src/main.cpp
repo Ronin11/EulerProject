@@ -19,7 +19,11 @@ int Fibonacci(int num){
 		return 1;
 	else if(num == 2)
 		return 2;
-	return Fibonacci(num - 1) + Fibonacci(num - 2);
+	int val = Fibonacci(num - 1) + Fibonacci(num - 2);
+	if(val % 2 == 0)
+		return val;
+	else
+		return 0;
 }
 
 //Function to control the generation of the Fibonacci Sequence
@@ -31,15 +35,6 @@ std::vector<int> get_Fibonacci_Sequence(){
 		data.push_back(Fibonacci(i));
 	data.pop_back();
 	return data;
-}
-
-std::vector<int> get_Even_Fibonacci_Numbers(){
-	std::vector<int> numbers = get_Fibonacci_Sequence();
-	std::vector<int> even_numbers = std::vector<int>();
-	for(int i : numbers) 
-		if(i % 2 == 0)//If number is even, add it to another vector
-			even_numbers.push_back(i);
-		return even_numbers;
 }
 
 //Sum the sequence sith accumulate and print it.
