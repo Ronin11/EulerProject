@@ -20,7 +20,7 @@ int Fibonacci(int num){
 	else if(num == 2)
 		return 2;
 	int val = Fibonacci(num - 1) + Fibonacci(num - 2);
-	if(val % 2 == 0)
+	if(val % 2 == 0)//We only want even Fibonacci numbers
 		return val;
 	else
 		return 0;
