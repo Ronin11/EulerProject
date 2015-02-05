@@ -12,7 +12,7 @@ const int TARGET = 10000;
 //Check if integer is prime. Optimized with the list of primes,
 //All non-prime numbers, must be divisible by a prime number, and 
 // will always be divisible by a number less than itself.
-bool is_Prime(int *prime, std::vector<unsigned long long int> *list){
+bool is_Prime(int *prime, std::vector<unsigned long int> *list){
 	for(int i = 0; i < list->size(); i++){
 		if(*prime % list->operator[](i) == 0)
 			return false;
@@ -21,8 +21,8 @@ bool is_Prime(int *prime, std::vector<unsigned long long int> *list){
 }
 
 //Iterate until the target is met.
-std::vector<unsigned long long int> generate_Primes(){
-	std::vector<unsigned long long int> data = std::vector<unsigned long long int>();
+std::vector<unsigned long int> generate_Primes(){
+	std::vector<unsigned long int> data = std::vector<unsigned long int>();
 	data.push_back(2);//Seed the vector with the first prime number.
 	for(int i = 3; data.size() <= TARGET; i++)
 		if(is_Prime(&i,&data))
@@ -31,7 +31,7 @@ std::vector<unsigned long long int> generate_Primes(){
 }
 
 int main(void){
-	std::vector<unsigned long long int> numbers = generate_Primes();
+	std::vector<unsigned long int> numbers = generate_Primes();
 	std::cout << "The answer is: " << numbers[TARGET] << std::endl;
 	return 0;
 
