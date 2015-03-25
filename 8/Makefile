@@ -1,20 +1,19 @@
-CC=gcc
-CFLAGS=
+CC=g++
+CFLAGS=-std=c++11
 LDFLAGS=
 
 #Application Source
-C_SOURCE_FILES += ./src/main.c
+C++SOURCE_FILES += ./src/main.cpp
 
 #Path for external includes
 
-
 #Name of final executable
-TARGET=Problem1
+TARGET=Problem8
 
 ########## RULES ##########
 .PHONY: all
 
 all: 
-	$(CC) $(C_SOURCE_FILES) -o $(TARGET)
+	$(CC) $(CFLAGS) $(C++SOURCE_FILES) -o $(TARGET)
 
 
